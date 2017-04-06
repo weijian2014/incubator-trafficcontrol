@@ -494,9 +494,9 @@ func getToData(config StartupConfig, init bool, configChan chan RunningConfig) {
 			if runningConfig.HealthUrls[cdnName] == nil {
 				runningConfig.HealthUrls[cdnName] = make(map[string]string)
 			}
-			url := "http://" + server.IPAddress + ":" + strconv.Itoa(server.TCPPort) + cacheStatPath
+			url := "http://" + server.IPAddress + cacheStatPath
 			runningConfig.HealthUrls[cdnName]["CacheStats"] = url
-			url = "http://" + server.IPAddress + ":" + strconv.Itoa(server.TCPPort) + dsStatPath
+			url = "http://" + server.IPAddress + dsStatPath
 			runningConfig.HealthUrls[cdnName]["DsStats"] = url
 		}
 	}
